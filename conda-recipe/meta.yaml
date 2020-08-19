@@ -7,7 +7,7 @@ package:
 
 source:
  git_url: https://github.com/giorgosR/xevo.git
- git_tag: master
+ git_tag: xevo-0.0.1
 # path: ../archive-latest.tar.gz
  
 build:
