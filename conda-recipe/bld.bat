@@ -1,8 +1,8 @@
-cmake -G "NMake Makefiles" -D CMAKE_BUILD_TYPE=Release -D CMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% %SRC_DIR%
+cmake -G "Visual Studio 16 2019" -A x64 -D BUILD_TESTS=OFF -D CMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% %SRC_DIR%
 if errorlevel 1 exit 1
 
-nmake
+cmake --build ./
 if errorlevel 1 exit 1
 
-nmake install
+cmake --build ./ --target install
 if errorlevel 1 exit 1
