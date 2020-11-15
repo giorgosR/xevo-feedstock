@@ -1,5 +1,5 @@
 {% set name = "xevo" %}
-{% set version = "0.0.1" %}
+{% set version = "0.0.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,8 +7,7 @@ package:
 
 source:
  git_url: https://github.com/giorgosR/xevo.git
- git_tag: xevo-0.0.1
-# path: ../archive-latest.tar.gz
+ git_tag: xevo-0.0.2
  
 build:
   number: 0
@@ -32,12 +31,14 @@ test:
     - test -d ${PREFIX}/include/xevo  # [unix]
     - test -f ${PREFIX}/include/xevo/ga.hpp  # [unix]
     - test -f ${PREFIX}/include/xevo/pso.hpp  # [unix]
+    - test -f ${PREFIX}/include/xevo/pso_ga.hpp  # [unix]
     - test -f ${PREFIX}/include/xevo/analytical_functions.hpp  # [unix]
     - test -f ${PREFIX}/include/xevo/functors.hpp  # [unix]
     - test -f ${PREFIX}/lib/cmake/xevo/xevoConfig.cmake  # [unix]
     - test -f ${PREFIX}/lib/cmake/xevo/xevoConfigVersion.cmake  # [unix]
     - if exist %LIBRARY_PREFIX%\include\xevo\ga.hpp (exit 0) else (exit 1)  # [win]
     - if exist %LIBRARY_PREFIX%\include\xevo\pso.hpp (exit 0) else (exit 1)  # [win]
+    - if exist %LIBRARY_PREFIX%\include\xevo\pso_ga.hpp (exit 0) else (exit 1)  # [win]
     - if exist %LIBRARY_PREFIX%\include\xevo\analytical_functions.hpp (exit 0) else (exit 1)  # [win]
     - if exist %LIBRARY_PREFIX%\include\xevo\functors.hpp (exit 0) else (exit 1)  # [win]
     - if exist %LIBRARY_PREFIX%\lib\cmake\xevoConfig.cmake (exit 0) else (exit 1)  # [win]
